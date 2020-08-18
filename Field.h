@@ -12,55 +12,54 @@ class Character;
 class Field
 {
 private:
-	static int count;		// счетчик пройденных комнат
+	static int count;		// counter of checked rooms
 
-	bool is_left_door;		// есть ли дверь в этом направлении
-	string type_left_door;	// цвет(тип) этой двери
+	bool is_left_door;		// is there a door in this direction
+	string type_left_door;	// type(color) of this door
 
 	bool is_right_door;
 	string type_right_door;
 
-	const bool is_front_door = true;	// дверь спереди есть всегда, чтобы не было ситуации, когда дверей нет вообще
+	const bool is_front_door = true;	// door is always in front of you
 	string type_front_door;
 
 	bool is_behind_door;
 	string type_behind_door;
 
-	bool is_here_smth;		// есть ли событие в комнате
-	string type_of_smth;	// тип события
+	bool is_here_smth;		// is there an event in the room
+	string type_of_smth;	// type of event
 
-	string description;		// пояснение события
+	string description;		// descryption of event
 
-	enum Inventory{ DOG };	// что может быть в инвентаре
+	enum Inventory{ DOG };	// what may be in inventory
 
-	vector<int> inventory;	// что фактически находится в инвентаре
+	vector<int> inventory;	// what is in inventory
 
 public:
 	Field(Character& hero, int doortype = 0);
 
-	/* Считывание команды с консоли */
+	/* Reading a command from the console */
 	string Choose_move(Character& hero);
 
-	/* Генерация местонахождения и цвета дверей */
+	/* Generating the location and color of doors */
 	void Respawn_door(bool& is_door, string& type, int resp, int red, int yel);
 
-	/* Распределение вероятностей и добавление события в новую комнату 
-		(в данный момент один метод на все типы дверей/комнат; в дальнейшем по методу на каждый тип) */
+	/* Probability distribution and adding an event to a new room */
 	void Green_event();
 
-	/* Генерация новой комнаты */
+	/* Generating a new room */
 	void Generate_new_field(string type_of_door);
 
-	/* Метод взаимодействия с событием в комнате */
+	/* Method for interacting with an event in a room */
 	void Event(string& event, Character& hero);
 
-	/* Основной метод. Совершение хода игроком. Возвращает true, если соблюдено условие победы */
+	/* Main method. Making a turn. Return true, if a player win */
 	bool Update(Character& hero);
 
-	/* Вывод всей необходимой информации об игре на консоль */
+	/* Output all necessary information about the game to the console */
 	void Show_info(Character& hero);
 
-	/* Сообщение о победе */
+	/* The message about the victory */
 	void Victory();
 };
 

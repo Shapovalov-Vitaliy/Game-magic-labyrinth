@@ -7,12 +7,12 @@ int main()
 {
 	srand(time(NULL));
 
-	/* Начальная генерация игры */
+	/* Init generation */
 	Character hero;
 	Field field(hero);
 	field.Show_info(hero);
 
-	/* Основной цикл игры */
+	/* Main cycle */
 	while (!hero.Die())
 	{
 		if (field.Update(hero))
