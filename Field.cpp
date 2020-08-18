@@ -10,7 +10,7 @@ class Character;
 
 Field::Field(Character& hero, int doortype = 0)
 {
-	this->is_left_door = false;	///////////////// NEED TO CHANGE TO RANDOM
+	this->is_left_door = false;
 	this->is_right_door = false;
 	this->is_behind_door = false;
 
@@ -72,8 +72,6 @@ void Field::Green_event()
 
 void Field::Generate_new_field(string type_of_door) // CHANGE NUMBER AND TYPE OF DOORS AND SET EVENT BY RANDOM
 {
-
-
 	if (type_of_door == "green")
 	{
 		Green_event();

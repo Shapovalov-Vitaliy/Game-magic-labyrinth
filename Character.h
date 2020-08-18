@@ -5,15 +5,19 @@
 class Character
 {
 private:
-	int HP;
-	int stamina;
+	int HP;			// показатель здоровья
+	int stamina;	// показатель выносливости
 
 public:
 	Character();
+
+	/* Геттеры и сеттеры для private полей */
 	int GetHP();
-	void SetHP(int);
+	void SetHP(int value);
 	int GetStamina();
-	void SetStamina(int = -1);
+	void SetStamina(int value = -1);
+
+	/* Метод проверки на смерть */
 	bool Die();
 };
 
