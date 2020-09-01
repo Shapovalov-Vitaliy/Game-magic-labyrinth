@@ -12,7 +12,7 @@ void Character::SetHP(int damage) { HP -= damage; }
 
 int Character::GetStamina() { return stamina; }
 
-void Character::SetStamina(int value = -1) { stamina += value; }
+void Character::SetStamina(int value/* = -1*/) { stamina += value; }
 
 bool Character::Die()
 {

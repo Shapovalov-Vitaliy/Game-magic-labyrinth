@@ -4,11 +4,17 @@
 #include "Field.h"
 #include "Character.h"
 
+#ifdef _WIN32
+#define CLEAR "cls"
+#else
+#define CLEAR "clear"
+#endif
+
 using namespace std;
 class Character;
 
 
-Field::Field(Character& hero, int doortype = 0)
+Field::Field(Character& hero, int doortype/* = 0*/)
 {
 	this->is_left_door = false;
 	this->is_right_door = false;
@@ -198,7 +204,7 @@ bool Field::Update(Character& hero)
 
 void Field::Show_info(Character& hero)
 {
-	system("cls");
+	system(CLEAR);
 
 	cout << "You are in magic tower. Can you escape this?" << endl;
 	cout << "Use this commands:" << endl;
