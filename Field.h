@@ -31,7 +31,7 @@ private:
 
 	string description;		// descryption of event
 
-	enum Inventory{ DOG };	// what may be in inventory
+	enum Inventory{ DOG, BONE };	// what may be in inventory
 
 	vector<int> inventory;	// what is in inventory
 
@@ -46,6 +46,10 @@ public:
 
 	/* Probability distribution and adding an event to a new room */
 	void Green_event();
+
+	void Yellow_event();
+
+	void Red_event();
 
 	/* Generating a new room */
 	void Generate_new_field(string type_of_door);
