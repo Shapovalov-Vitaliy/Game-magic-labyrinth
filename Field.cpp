@@ -15,9 +15,6 @@ using namespace std;
 class Character;
 
 Field::Field(Character& hero, int doortype)
-=======
-
-Field::Field(Character& hero, int doortype)
 {
 	this->is_left_door = false;
 	this->is_right_door = false;
