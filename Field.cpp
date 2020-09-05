@@ -15,6 +15,9 @@ using namespace std;
 class Character;
 
 Field::Field(Character& hero, int doortype)
+=======
+
+Field::Field(Character& hero, int doortype)
 {
 	this->is_left_door = false;
 	this->is_right_door = false;
@@ -105,7 +108,7 @@ void Field::Red_event()
 	}
 }
 
-void Field::Generate_new_field(string type_of_door) // CHANGE NUMBER AND TYPE OF DOORS AND SET EVENT BY RANDOM
+void Field::Generate_new_field(string type_of_door)
 {
 	if (type_of_door == "green")
 	{
@@ -134,7 +137,7 @@ void Field::Generate_new_field(string type_of_door) // CHANGE NUMBER AND TYPE OF
 	}
 }
 
-void Field::Event(string& event, Character& hero) // DEPENDING ON event SOMETHING HAPPENS
+void Field::Event(string& event, Character& hero)
 {
 	if (event == "a potion")
 	{
@@ -334,6 +337,10 @@ void Field::Show_info(Character& hero)
 			{
 			case DOG:
 				cout << " a dog |";
+				break;
+			case BONE:
+				cout << " a bone |";
+				break;
 			default:
 				break;
 			}
