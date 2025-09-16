@@ -23,7 +23,7 @@ Field::Field(Character& hero, int doortype)
 
 	this->is_here_smth = false;
 	this->type_of_smth = "a dog";
-	this->description = "Pretty french buldog jump on you. You must take him with you";
+	this->description = "Pretty french buldog jumps on you. You must take him with you";
 
 	this->type_behind_door = "green";
 	this->type_left_door = "green";
@@ -67,7 +67,7 @@ void Field::Green_event()
 	if (random == 0)
 	{
 		this->type_of_smth = "a potion";
-		this->description = "On the label written \"Drink me\"";
+		this->description = "The label says \"Drink me\"";
 	}
 	else if (random == 1)
 	{
@@ -222,7 +222,7 @@ void Field::Event(string& event, Character& hero)
 						return i == DOG;
 					}), inventory.end());
 
-				this->description = "As soon as you open the trapdoor, your dog jump in darkness. You couldn't get through the doorway because it's narrow.";
+				this->description = "As soon as you open the trapdoor, your dog jumps in darkness. You couldn't get through the doorway because it's narrow.";
 			}
 			else
 			{
@@ -236,7 +236,7 @@ void Field::Event(string& event, Character& hero)
 			hero.SetStamina();
 
 			this->type_of_smth = "nothing";
-			this->description = "You jumped through the doorway and landed on soft pillows.";
+			this->description = "You jump through the doorway and land on soft pillows.";
 		}
 
 		event = "nothing else";
@@ -360,7 +360,7 @@ void Field::Show_info(Character& hero)
 void Field::Victory()
 {
 	system("cls");
-	cout << "You killed yourself but not dead. You woke up at home in your bed." << endl;
+	cout << "You killed yourself, but you didn't die. You woke up at home in your bed." << endl;
 	cout << "It was just a dream." << endl << endl;
 	cout << "Congratulations!!!" << endl;
 	cout << "You checked " << count << " rooms" << endl;
